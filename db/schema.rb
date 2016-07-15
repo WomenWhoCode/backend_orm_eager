@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20160714214511) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "comment1s", force: :cascade do |t|
     t.integer  "post1_id"
     t.text     "body"
@@ -20,7 +23,7 @@ ActiveRecord::Schema.define(version: 20160714214511) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "comment1s", ["post1_id"], name: "index_comment1s_on_post1_id"
+  add_index "comment1s", ["post1_id"], name: "index_comment1s_on_post1_id", using: :btree
 
   create_table "post1s", force: :cascade do |t|
     t.string   "title"
@@ -29,4 +32,5 @@ ActiveRecord::Schema.define(version: 20160714214511) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "comment1s", "post1s"
 end

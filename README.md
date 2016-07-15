@@ -9,9 +9,14 @@
     3. Click `Create Workspace`.
 3. If necessary, open the workspace.
 4. Prepare the Cloud9 virtual machine.
-    1. `bundle install`
-    2. `rake db:migrate`
+    1. `sudo service postgresql start`
+    2. `psql -c 'CREATE DATABASE db;'`
+    2. `bundle install`
+    3. `rake db:migrate`
 
 ## Development
 
-Run `rake test`. Make the tests pass!
+1. Ensure the database server is running.
+    * `sudo service postgresql status` should report 'online' and not 'down'
+    * `sudo service postgresql start` to start if not running
+2. Run `rake test`. Make the tests pass!
