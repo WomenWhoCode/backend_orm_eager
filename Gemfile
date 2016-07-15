@@ -37,6 +37,7 @@ group :development, :test do
   gem 'byebug'
   
   gem 'rails-perftest'
+  gem 'ruby-prof'
 end
 
 group :development do

@@ -9,7 +9,8 @@
     3. Click `Create Workspace`.
 3. If necessary, open the workspace.
 4. Prepare the Cloud9 virtual machine.
-    1. `rake db:migrate`
+    1. `bundle install`
+    2. `rake db:migrate`
 
 ## Development
 
