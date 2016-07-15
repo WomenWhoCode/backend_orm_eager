@@ -12,3 +12,5 @@
     1. `rake db:migrate`
 
 ## Development
+
+Run `rake test`. Make the tests pass!

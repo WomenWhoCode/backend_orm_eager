@@ -1,0 +1,15 @@
+<h1>One#index</h1>
+<p>Find me in app/views/one/index.html.erb</p>
+<div>
+  <% @post1s.each do |post1| %>
+    <div>
+      <div><%= post1.title %></div>
+      <div><%= post1.body %></div>
+      <div>
+        <% post1.comment1s.each do |comment1| %>
+          <div><%= comment1.body %></div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
