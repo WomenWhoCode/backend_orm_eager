@@ -100,7 +100,6 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
-    rails-perftest (0.0.6)
     railties (4.2.5)
       actionpack (= 4.2.5)
       activesupport (= 4.2.5)
@@ -109,7 +108,6 @@ GEM
     rake (11.2.2)
     rdoc (4.2.2)
       json (~> 1.4)
-    ruby-prof (0.15.9)
     sass (3.4.22)
     sass-rails (5.0.5)
       railties (>= 4.0.0, < 6)
@@ -154,8 +152,6 @@ DEPENDENCIES
   jquery-rails
   pg
   rails (= 4.2.5)
-  rails-perftest
-  ruby-prof
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring
