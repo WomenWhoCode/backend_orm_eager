@@ -3,6 +3,6 @@
 <% require 'faker' %>
 
 <% 1.upto(25) do |i| %>
-tag_<%= i %>:
+tag1_<%= i %>:
   tag: <%= Faker::Lorem.word %>
 <% end %>
