@@ -1,0 +1,8 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+<% require 'faker' %>
+
+<% 1.upto(25) do |i| %>
+tag2_<%= i %>:
+  tag: <%= Faker::Lorem.word %>
+<% end %>

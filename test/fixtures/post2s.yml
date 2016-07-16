@@ -1,0 +1,7 @@
+<% require 'faker' %>
+
+<% 1.upto(100) do |i| %>
+post2_<%= i %>:
+  title: <%= Faker::Lorem.sentence %>
+  body: <%= Faker::Lorem.paragraph %>
+<% end %>
