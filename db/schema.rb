@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160716004825) do
+ActiveRecord::Schema.define(version: 20160718004825) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,7 +33,31 @@ ActiveRecord::Schema.define(version: 20160716004825) do
   add_index "comment1s_tag1s", ["comment1_id"], name: "index_comment1s_tag1s_on_comment1_id", using: :btree
   add_index "comment1s_tag1s", ["tag1_id"], name: "index_comment1s_tag1s_on_tag1_id", using: :btree
 
+  create_table "comment2s", force: :cascade do |t|
+    t.integer  "post2_id"
+    t.text     "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "comment2s", ["post2_id"], name: "index_comment2s_on_post2_id", using: :btree
+
+  create_table "comment2s_tag2s", id: false, force: :cascade do |t|
+    t.integer "comment2_id"
+    t.integer "tag2_id"
+  end
+
+  add_index "comment2s_tag2s", ["comment2_id"], name: "index_comment2s_tag2s_on_comment2_id", using: :btree
+  add_index "comment2s_tag2s", ["tag2_id"], name: "index_comment2s_tag2s_on_tag2_id", using: :btree
+
   create_table "post1s", force: :cascade do |t|
+    t.string   "title"
+    t.text     "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "post2s", force: :cascade do |t|
     t.string   "title"
     t.text     "body"
     t.datetime "created_at", null: false
@@ -44,7 +68,14 @@ ActiveRecord::Schema.define(version: 20160716004825) do
     t.string "tag"
   end
 
+  create_table "tag2s", force: :cascade do |t|
+    t.string "tag"
+  end
+
   add_foreign_key "comment1s", "post1s"
   add_foreign_key "comment1s_tag1s", "comment1s"
   add_foreign_key "comment1s_tag1s", "tag1s"
+  add_foreign_key "comment2s", "post2s"
+  add_foreign_key "comment2s_tag2s", "comment2s"
+  add_foreign_key "comment2s_tag2s", "tag2s"
 end
