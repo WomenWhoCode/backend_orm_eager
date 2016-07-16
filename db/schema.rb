@@ -30,6 +30,9 @@ ActiveRecord::Schema.define(version: 20160716004825) do
     t.integer "tag1_id"
   end
 
+  add_index "comment1s_tag1s", ["comment1_id"], name: "index_comment1s_tag1s_on_comment1_id", using: :btree
+  add_index "comment1s_tag1s", ["tag1_id"], name: "index_comment1s_tag1s_on_tag1_id", using: :btree
+
   create_table "post1s", force: :cascade do |t|
     t.string   "title"
     t.text     "body"
@@ -42,4 +45,6 @@ ActiveRecord::Schema.define(version: 20160716004825) do
   end
 
   add_foreign_key "comment1s", "post1s"
+  add_foreign_key "comment1s_tag1s", "comment1s"
+  add_foreign_key "comment1s_tag1s", "tag1s"
 end
