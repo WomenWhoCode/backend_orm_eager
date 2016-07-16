@@ -6,7 +6,7 @@
       <div><%= post1.title %></div>
       <div><%= post1.body %></div>
       <div>
-        <% post1.comment1s[0..10].each do |comment1| %>
+        <% post1.comment1s.limit(10).each do |comment1| %>
           <div><%= comment1.body %></div>
         <% end %>
       </div>
