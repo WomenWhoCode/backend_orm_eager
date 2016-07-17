@@ -1,9 +1,7 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+<% require 'faker' %>
 
-one:
-  folder3_id: 
-  name: MyString
-
-two:
-  folder3_id: 
-  name: MyString
+<% 1.upto(20000) do |i| %>
+file3_<%= i %>:
+  folder3_id: <%= rand(1000) + 1 %>
+  name: <%= Faker::File.file_name %>
+<% end %>

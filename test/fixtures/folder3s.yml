@@ -1,9 +1,21 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+<% require 'faker' %>
 
-one:
-  parent_id: 
-  name: MyString
-
-two:
-  parent_id: 
-  name: MyString
+<%
+ancestries = {}
+1.upto(1000) do |i| 
+%>
+folder3_<%= i %>:
+  id: <%= i %>
+  <%
+  if (j = rand(i)) > 0 
+      k = (ancestries[j].nil? ? j.to_s : (ancestries[j] + ',' + j.to_s))
+  %>
+  ancestry: '<%= k %>'
+  <%
+  else
+      k = nil
+  end
+  ancestries[i] = k   
+  %>
+  name: <%= Faker::File.file_name %>
+<% end %>

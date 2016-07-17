@@ -10,7 +10,7 @@
 3. If necessary, open the workspace.
 4. Prepare the Cloud9 virtual machine.
     1. `sudo service postgresql start`
-    2. `psql -c 'CREATE DATABASE db;'`
+    2. `psql -c "CREATE DATABASE db WITH template=template0 encoding='UTF-8';"`
     2. `bundle install`
     3. `rake db:migrate`
 

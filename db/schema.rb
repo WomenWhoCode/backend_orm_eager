@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160718004826) do
+ActiveRecord::Schema.define(version: 20160718004827) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,15 @@ ActiveRecord::Schema.define(version: 20160718004826) do
   add_index "comment2s_tag2s", ["comment2_id"], name: "index_comment2s_tag2s_on_comment2_id", using: :btree
   add_index "comment2s_tag2s", ["tag2_id"], name: "index_comment2s_tag2s_on_tag2_id", using: :btree
 
+  create_table "file3s", force: :cascade do |t|
+    t.integer  "folder3_id"
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "file3s", ["folder3_id"], name: "index_file3s_on_folder3_id", using: :btree
+
   create_table "folder3s", force: :cascade do |t|
     t.text     "ancestry"
     t.string   "name"
@@ -87,4 +96,5 @@ ActiveRecord::Schema.define(version: 20160718004826) do
   add_foreign_key "comment2s", "post2s"
   add_foreign_key "comment2s_tag2s", "comment2s"
   add_foreign_key "comment2s_tag2s", "tag2s"
+  add_foreign_key "file3s", "folder3s"
 end
