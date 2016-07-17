@@ -1,0 +1,8 @@
+<div>
+  <div><%= folder3.name %></div>
+  <div><ul>
+    <% folder3.children.each do |child_folder3| %>
+      <li><%= render partial: 'three/folder3', locals: {folder3: child_folder3} %></li>
+    <% end %>
+  </ul></div>
+</div>

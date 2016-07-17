@@ -1,0 +1,7 @@
+<h1>Three#index</h1>
+<p>Find me in app/views/three/index.html.erb</p>
+<div>
+  <% @root_folder3s.each do |folder3| %>
+    <%= render partial: 'three/folder3', locals: {folder3: folder3} %>
+  <% end %>
+</div>

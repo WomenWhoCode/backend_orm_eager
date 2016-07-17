@@ -8,7 +8,7 @@ folder3_<%= i %>:
   id: <%= i %>
   <%
   if (j = rand(i)) > 0 
-      k = (ancestries[j].nil? ? j.to_s : (ancestries[j] + ',' + j.to_s))
+      k = (ancestries[j].nil? ? j.to_s : (ancestries[j] + '/' + j.to_s))
   %>
   ancestry: '<%= k %>'
   <%
