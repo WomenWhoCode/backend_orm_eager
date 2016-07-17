@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  folder3_id: 
+  name: MyString
+
+two:
+  folder3_id: 
+  name: MyString
