@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get '1' => 'one#index'
+  get '2' => 'two#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
