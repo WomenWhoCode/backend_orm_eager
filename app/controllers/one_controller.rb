@@ -1,5 +1,5 @@
 class OneController < ApplicationController
   def index
-    @post1s = Post1.order(created_at: :desc).limit(50)
+    @post1s = Post1.includes(comment1s: :tag1s).order(created_at: :desc).limit(50)
   end
 end
