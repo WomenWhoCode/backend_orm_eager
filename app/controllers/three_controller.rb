@@ -1,5 +1,6 @@
 class ThreeController < ApplicationController
   def index
-    @root_folder3s = Folder3.roots
+    Folder3.cache
+    @root_folder3s = Folder3.cached_roots
   end
 end
