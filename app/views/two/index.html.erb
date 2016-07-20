@@ -6,7 +6,7 @@
       <div><%= post2.title %></div>
       <div><%= post2.body %></div>
       <div>
-        <% post2.comment2s[0...15].each do |comment2| %>
+        <% post2.recent_15_comment2s.each do |comment2| %>
           <div><%= comment2.body %></div>
           <div><% comment2.tag2s.each do |tag2| %><span><%= tag2.tag %></span><% end %></div>
         <% end %>
