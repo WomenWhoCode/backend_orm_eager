@@ -13,7 +13,8 @@
     2. `psql -c "CREATE DATABASE db WITH template=template0 encoding='UTF-8';"`
     3. `bundle install`
     4. `rake db:migrate`
-    5. Put the following in `config/secrets.yml`. Fill in `<secret>` with the output of `rake secret`.
+    5. `rake db:fixtures:load`
+    6. Put the following in `config/secrets.yml`. Fill in `<secret>` with the output of `rake secret`.
              
             development:
               secret_key_base: <secret>
