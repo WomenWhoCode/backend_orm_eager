@@ -11,8 +11,15 @@
 4. Prepare the Cloud9 virtual machine.
     1. `sudo service postgresql start`
     2. `psql -c "CREATE DATABASE db WITH template=template0 encoding='UTF-8';"`
-    2. `bundle install`
-    3. `rake db:migrate`
+    3. `bundle install`
+    4. `rake db:migrate`
+    5. Put the following in `config/secrets.yml`. Fill in `<secret>` with the output of `rake secret`.
+             
+            development:
+              secret_key_base: <secret>
+
+            test:
+              secret_key_base: <secret>
 
 ## Development
 
